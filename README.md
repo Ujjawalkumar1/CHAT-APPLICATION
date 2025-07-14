@@ -84,7 +84,7 @@ A modern, real-time Chat Application built using the **MERN stack**. This projec
 ### Backend Setup
 1. Navigate to the backend directory:
    ```bash
-   cd D Backend
+   cd Backend
    ```
 
 2. Install dependencies:
