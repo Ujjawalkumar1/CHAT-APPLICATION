@@ -22,10 +22,10 @@ A modern, real-time Chat Application built using the **MERN stack**. This projec
 ## 🖼️ Screenshots
 
 ### 🔐 Login Page
-![Login Screenshot](images/login.png) <!-- Replace with your actual image path -->
+![Login Screenshot](./images/login.png) <!-- Replace with your actual image path -->
 
 ### 📝 Signup Page
-![Signup Screenshot](images/signup.png) <!-- Replace with your actual image path -->
+![Signup Screenshot](./images/signup.png) <!-- Replace with your actual image path -->
 
 ### 💬 Chat Dashboard
 ![Chat Screenshot](images/chat.png) <!-- Replace with your actual image path -->
