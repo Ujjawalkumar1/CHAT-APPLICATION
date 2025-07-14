@@ -64,8 +64,48 @@ A modern, real-time Chat Application built using the **MERN stack**. This projec
 
 ---
 
-### Frontend Setup
 
+### Frontend Setup
 1. Navigate to the frontend directory:
    ```bash
-   cd frontend
+   cd  Frontend
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+### Backend Setup
+1. Navigate to the backend directory:
+   ```bash
+   cd D Backend
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+
+## 🚀 Available Scripts
+
+### Frontend
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+### Backend
+- `npm run dev` - Start development server with nodemon
+
