@@ -27,8 +27,6 @@ A modern, real-time Chat Application built using the **MERN stack**. This projec
 ### 📝 Signup Page
 ![Signup Screenshot](./images/signup.png) <!-- Replace with your actual image path -->
 
-### 💬 Chat Dashboard
-![Chat Screenshot](images/chat.png) <!-- Replace with your actual image path -->
 
 ---
 
