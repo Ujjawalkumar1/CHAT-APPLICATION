@@ -1,8 +1,9 @@
 import Signup from './components/Signup';
+import HomePage from './components/HomePage';
+import Login from './components/Login';
 import { useState } from 'react'
 import './App.css'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-
 
 
 const router = createBrowserRouter([
@@ -21,7 +22,6 @@ const router = createBrowserRouter([
 
 ])
 
-
 function App() {
   const [count, setCount] = useState(0)
 
@@ -30,9 +30,7 @@ function App() {
       className="min-h-screen bg-cover bg-center flex items-center justify-center"
       style={{ backgroundImage: "url('/bg.avif')" }}
     >
-      <h1 className="text-3xl font-bold bg-gray-400 p-4 rounded-lg shadow-lg text-white">
-        Let's build chat app
-      </h1>
+      <RouterProvider router={router}/>
     </div>
   )
 }

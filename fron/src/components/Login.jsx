@@ -1,3 +1,16 @@
+import React from 'react'
+
+const Login = () => {
+  return (
+    <div>
+      <h1>login</h1>
+    </div>
+  )
+}
+
+export default Login
+
+
 // import React, { useState } from 'react'
 // import { Link, useNavigate } from 'react-router-dom'
 // import toast from "react-hot-toast"

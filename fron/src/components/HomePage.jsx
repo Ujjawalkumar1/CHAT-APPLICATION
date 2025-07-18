@@ -1,3 +1,16 @@
+import React from 'react'
+
+const HomePage = () => {
+  return (
+    <div>
+      <h1>HomePage</h1>
+    </div>
+  )
+}
+
+export default HomePage
+
+
 // import React, { useEffect } from 'react'
 // import Sidebar from './Sidebar'
 // import MessageContainer from './MessageContainer'
