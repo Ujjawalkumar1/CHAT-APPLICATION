@@ -1,8 +1,59 @@
+// import React from 'react'
+// import { useNavigate } from 'react-router-dom'
+
+// const Signup = () => {
+//   const navigate = useNavigate();
+
+//   const handleSignup = () => {
+//     // Here you can add your signup logic (API call etc.)
+//     // After successful signup, navigate to login
+//     navigate('/login');
+//   }
+
+//   return (
+//     <div className="flex flex-col items-center justify-center min-h-screen">
+//       <h1 className="text-3xl font-bold mb-6">Signup</h1>
+
+//       <form className="flex flex-col space-y-4 w-80">
+//         <input
+//           type="text"
+//           placeholder="Username"
+//           className="border p-2 rounded"
+//         />
+//         <input
+//           type="email"
+//           placeholder="Email"
+//           className="border p-2 rounded"
+//         />
+//         <input
+//           type="password"
+//           placeholder="Password"
+//           className="border p-2 rounded"
+//         />
+//         <button
+//           type="button"
+//           onClick={handleSignup}
+//           className="bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
+//         >
+//           Signup Done
+//         </button>
+//       </form>
+//     </div>
+//   )
+// }
+
+// export default Signup
+
+
+
+
+
+
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import axios from "axios";
 import toast from "react-hot-toast";
-import { BASE_URL } from '..';
+//import { BASE_URL } from '..';
 
 
 const Signup = () => {
@@ -20,7 +71,7 @@ const Signup = () => {
   const onSubmitHandler = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`${BASE_URL}/api/v1/user/register`, user, {
+      const res = await axios.post(`http://localhost:8080/api/v1/user/register`, user, {
         headers: {
           'Content-Type': 'application/json'
         },
