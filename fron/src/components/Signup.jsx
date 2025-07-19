@@ -1,142 +1,175 @@
-import React from 'react'
-
-const Signup = () => {
-  return (
-    <div>
-      <h1>Singup</h1>
-    </div>
-  )
-}
-
-export default Signup
-
-
-
-
-
-
-
-// import React, { useState } from 'react'
-// import { Link, useNavigate } from 'react-router-dom';
-// import axios from "axios";
-// import toast from "react-hot-toast";
-// import { BASE_URL } from '..';
-
+// import React from 'react'
+// import { useNavigate } from 'react-router-dom'
 
 // const Signup = () => {
-//   const [user, setUser] = useState({
-//     fullName: "",
-//     username: "",
-//     password: "",
-//     confirmPassword: "",
-//     gender: "",
-//   });
 //   const navigate = useNavigate();
-//   const handleCheckbox = (gender) => {
-//     setUser({ ...user, gender });
+
+//   const handleSignup = () => {
+//     // Here you can add your signup logic (API call etc.)
+//     // After successful signup, navigate to login
+//     navigate('/login');
 //   }
-//   const onSubmitHandler = async (e) => {
-//     e.preventDefault();
-//     try {
-//       const res = await axios.post(`${BASE_URL}/api/v1/user/register`, user, {
-//         headers: {
-//           'Content-Type': 'application/json'
-//         },
-//         withCredentials: true
-//       });
-//       if (res.data.success) {
-//         navigate("/login");
-//         toast.success(res.data.message);
-//       }
-//     } catch (error) {
-//       toast.error(error.response.data.message);
-//       console.log(error);
-//     }
-//     setUser({
-//       fullName: "",
-//       username: "",
-//       password: "",
-//       confirmPassword: "",
-//       gender: "",
-//     })
-//   }
+
 //   return (
-//     <div className="min-w-96 mx-auto">
-//       <div className='w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-gray-100'>
-//         <h1 className='text-3xl font-bold text-center'>Signup</h1>
-//         <form onSubmit={onSubmitHandler} action="">
-//           <div>
-//             <label className='label p-2'>
-//               <span className='text-base label-text'>Full Name</span>
-//             </label>
-//             <input
-//               value={user.fullName}
-//               onChange={(e) => setUser({ ...user, fullName: e.target.value })}
-//               className='w-full input input-bordered h-10'
-//               type="text"
-//               placeholder='Full Name' />
-//           </div>
-//           <div>
-//             <label className='label p-2'>
-//               <span className='text-base label-text'>Username</span>
-//             </label>
-//             <input
-//               value={user.username}
-//               onChange={(e) => setUser({ ...user, username: e.target.value })}
-//               className='w-full input input-bordered h-10'
-//               type="text"
-//               placeholder='Username' />
-//           </div>
-//           <div>
-//             <label className='label p-2'>
-//               <span className='text-base label-text'>Password</span>
-//             </label>
-//             <input
-//               value={user.password}
-//               onChange={(e) => setUser({ ...user, password: e.target.value })}
-//               className='w-full input input-bordered h-10'
-//               type="password"
-//               placeholder='Password' />
-//           </div>
-//           <div>
-//             <label className='label p-2'>
-//               <span className='text-base label-text'>Confirm Password</span>
-//             </label>
-//             <input
-//               value={user.confirmPassword}
-//               onChange={(e) => setUser({ ...user, confirmPassword: e.target.value })}
-//               className='w-full input input-bordered h-10'
-//               type="password"
-//               placeholder='Confirm Password' />
-//           </div>
-//           <div className='flex items-center my-4'>
-//             <div className='flex items-center'>
-//               <p>Male</p>
-//               <input
-//                 type="checkbox"
-//                 checked={user.gender === "male"}
-//                 onChange={() => handleCheckbox("male")}
-//                 defaultChecked
-//                 className="checkbox mx-2" />
-//             </div>
-//             <div className='flex items-center'>
-//               <p>Female</p>
-//               <input
-//                 type="checkbox"
-//                 checked={user.gender === "female"}
-//                 onChange={() => handleCheckbox("female")}
-//                 defaultChecked
-//                 className="checkbox mx-2" />
-//             </div>
-//           </div>
-//           <p className='text-center my-2'>Already have an account? <Link to="/login"> login </Link></p>
-//           <div>
-//             <button type='submit' className='btn btn-block btn-sm mt-2 border border-slate-700'>Singup</button>
-//           </div>
-//         </form>
-//       </div>
+//     <div className="flex flex-col items-center justify-center min-h-screen">
+//       <h1 className="text-3xl font-bold mb-6">Signup</h1>
+
+//       <form className="flex flex-col space-y-4 w-80">
+//         <input
+//           type="text"
+//           placeholder="Username"
+//           className="border p-2 rounded"
+//         />
+//         <input
+//           type="email"
+//           placeholder="Email"
+//           className="border p-2 rounded"
+//         />
+//         <input
+//           type="password"
+//           placeholder="Password"
+//           className="border p-2 rounded"
+//         />
+//         <button
+//           type="button"
+//           onClick={handleSignup}
+//           className="bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
+//         >
+//           Signup Done
+//         </button>
+//       </form>
 //     </div>
 //   )
 // }
 
 // export default Signup
+
+
+
+
+
+
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
+import axios from "axios";
+import toast from "react-hot-toast";
+//import { BASE_URL } from '..';
+
+
+const Signup = () => {
+  const [user, setUser] = useState({
+    fullName: "",
+    username: "",
+    password: "",
+    confirmPassword: "",
+    gender: "",
+  });
+  const navigate = useNavigate();
+  const handleCheckbox = (gender) => {
+    setUser({ ...user, gender });
+  }
+  const onSubmitHandler = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post(`http://localhost:8080/api/v1/user/register`, user, {
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        withCredentials: true
+      });
+      if (res.data.success) {
+        navigate("/login");
+        toast.success(res.data.message);
+      }
+    } catch (error) {
+      toast.error(error.response.data.message);
+      console.log(error);
+    }
+    setUser({
+      fullName: "",
+      username: "",
+      password: "",
+      confirmPassword: "",
+      gender: "",
+    })
+  }
+  return (
+    <div className="min-w-96 mx-auto">
+      <div className='w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-gray-100'>
+        <h1 className='text-3xl font-bold text-center'>Signup</h1>
+        <form onSubmit={onSubmitHandler} action="">
+          <div>
+            <label className='label p-2'>
+              <span className='text-base label-text'>Full Name</span>
+            </label>
+            <input
+              value={user.fullName}
+              onChange={(e) => setUser({ ...user, fullName: e.target.value })}
+              className='w-full input input-bordered h-10'
+              type="text"
+              placeholder='Full Name' />
+          </div>
+          <div>
+            <label className='label p-2'>
+              <span className='text-base label-text'>Username</span>
+            </label>
+            <input
+              value={user.username}
+              onChange={(e) => setUser({ ...user, username: e.target.value })}
+              className='w-full input input-bordered h-10'
+              type="text"
+              placeholder='Username' />
+          </div>
+          <div>
+            <label className='label p-2'>
+              <span className='text-base label-text'>Password</span>
+            </label>
+            <input
+              value={user.password}
+              onChange={(e) => setUser({ ...user, password: e.target.value })}
+              className='w-full input input-bordered h-10'
+              type="password"
+              placeholder='Password' />
+          </div>
+          <div>
+            <label className='label p-2'>
+              <span className='text-base label-text'>Confirm Password</span>
+            </label>
+            <input
+              value={user.confirmPassword}
+              onChange={(e) => setUser({ ...user, confirmPassword: e.target.value })}
+              className='w-full input input-bordered h-10'
+              type="password"
+              placeholder='Confirm Password' />
+          </div>
+          <div className='flex items-center my-4'>
+            <div className='flex items-center'>
+              <p>Male</p>
+              <input
+                type="checkbox"
+                checked={user.gender === "male"}
+                onChange={() => handleCheckbox("male")}
+                defaultChecked
+                className="checkbox mx-2" />
+            </div>
+            <div className='flex items-center'>
+              <p>Female</p>
+              <input
+                type="checkbox"
+                checked={user.gender === "female"}
+                onChange={() => handleCheckbox("female")}
+                defaultChecked
+                className="checkbox mx-2" />
+            </div>
+          </div>
+          <p className='text-center my-2'>Already have an account? <Link to="/login"> login </Link></p>
+          <div>
+            <button type='submit' className='btn btn-block btn-sm mt-2 border border-slate-700'>Singup</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  )
+}
+
+export default Signup

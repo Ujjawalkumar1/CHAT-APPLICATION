@@ -7,3 +7,12 @@ Gpxdb09bDz23pVdK
 
 
 mongodb+srv://ujjawalkumar787898:Gpxdb09bDz23pVdK@cluster0.qlbfuem.mongodb.net/
+
+
+
+
+npm install @reduxjs/toolkit react-redux redux-persist
+npm install axios
+npm install socket.io-client
+npm install react-hot-toast
+npm install react-icons
