@@ -15,11 +15,13 @@ const HomePage = () => {
     }
   }, []);
   return (
-    <div className='flex sm:h-[450px] md:h-[550px] rounded-lg overflow-hidden bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0'>
-      <Sidebar />
+    <div className="flex sm:h-[450px] md:h-[550px] rounded-lg overflow-hidden bg-white/10 backdrop-blur-md border border-white/20 shadow-lg">
+    <Sidebar />
       <MessageContainer />
-    </div>
+</div>
   )
 }
+
+
 
 export default HomePage
